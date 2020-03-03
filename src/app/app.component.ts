@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +7,20 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent implements OnInit {
+  @Input() userName: string;
   title = 'my-element';
-  isShow: boolean;
+  isShow: boolean = true;
 
   constructor() {
 
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.isShow = true;
-    }, 3000);
 
+    setTimeout(() =>
+    {
+      this.title = localStorage.getItem('name');
+    }, 1000);
   }
 
 }

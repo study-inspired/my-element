@@ -7,7 +7,7 @@
   <title>Testing our custom element</title>
   <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
+<body onload="myFunction()">
 
 <div class="container">
   <div class="info">
@@ -66,8 +66,10 @@
   </div>
 </div>
 
-<app-root></app-root>
-<script type="text/javascript" src="my-element.js"></script>
+<custom-app userName="'test user name'"></custom-app>
+<script src="my-element-es2015.js?v2" type="module"></script>
+<script src="my-element-es5.js?v2" nomodule defer></script>
+
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
